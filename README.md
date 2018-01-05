@@ -4,9 +4,9 @@ Given a triangle of numbers, find the maximum total from top to bottom.
 
 Example:
 
-6
-3 5
-9 7 1
+6 <br/>
+3 5 <br/>
+9 7 1 <br/>
 4 6 8 4
 
 In this triangle the maximum total is: 
