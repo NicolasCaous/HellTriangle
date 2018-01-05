@@ -10,7 +10,7 @@ class HellTriangle:
     #
     #   The solution is a simple recursive iteration over the multidimensional array
     #
-    #   Complexity: O(n)
+    #   Complexity: 2^n
     #
     def __find_sum(self, row, i, sum):
         # Breakpoint
@@ -18,7 +18,8 @@ class HellTriangle:
             return sum
 
         # Recursive call
-        elif self.triangle[row + 1][i] > self.triangle[row + 1][i + 1]:
-            return self.__find_sum(row + 1, i, sum + self.triangle[row + 1][i])
-        else:
-            return self.__find_sum(row + 1, i + 1, sum + self.triangle[row + 1][i + 1])
+        left_sum = self.__find_sum(row + 1, i, sum + self.triangle[row + 1][i])
+        right_sum = self.__find_sum(row + 1, i + 1, sum + self.triangle[row + 1][i + 1])
+
+        # Return the best result possible
+        return max(left_sum, right_sum)
