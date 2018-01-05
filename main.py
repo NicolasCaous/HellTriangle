@@ -10,13 +10,17 @@ if __name__ == '__main__':
     try:
         input = eval(sys.argv[1])
         if not isinstance(input, list):
-            raise ValueError("Not a multidimensional array of integers")
+            raise ValueError("Not a multidimensional array of integers valid for HellTriangle")
+        i = 1
         for row in input:
+            if len(row) != i:
+                raise ValueError("Not a multidimensional array of integers valid for HellTriangle")
+            i = i + 1
             if not isinstance(row, list):
-                raise ValueError("Not a multidimensional array of integers")
+                raise ValueError("Not a multidimensional array of integers valid for HellTriangle")
             for integer in row:
                 if not isinstance(integer, int):
-                    raise ValueError("Not a multidimensional array of integers")
+                    raise ValueError("Not a multidimensional array of integers valid for HellTriangle")
 
     except Exception, e:
         print(str(e))

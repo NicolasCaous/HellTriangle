@@ -21,5 +21,5 @@ class HellTriangle:
         left_sum = self.__find_sum(row + 1, i, sum + self.triangle[row + 1][i])
         right_sum = self.__find_sum(row + 1, i + 1, sum + self.triangle[row + 1][i + 1])
 
-        # Return the best result possible
+        # Returns the largest between two partial sums
         return max(left_sum, right_sum)
